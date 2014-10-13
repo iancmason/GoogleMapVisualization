@@ -1,0 +1,27 @@
+<html>
+<head>
+  <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+  <script type='text/javascript'>
+   google.load('visualization', '1', {'packages': ['geomap']});
+   google.setOnLoadCallback(drawMap);
+
+    function drawMap() {
+      var data = google.visualization.arrayToDataTable(
+    [['country', 'Female labor participation rate'], ['AF', '15.5'], ['BR', '59.4000015258789'], ['CN', '67.9000015258789'], ['DO', '50.7999992370605'], ['FR', '51.2000007629395'], ['GH', '66.8000030517578'], ['ID', '51'], ['IN', '29'], ['IT', '37.7000007629395'], ['MG', '83.5'], ['PK', '22.3999996185303'], ['US', '57.5'], ['ZA', '43.7999992370605']]
+        );
+
+      var options = {};
+      options['dataMode'] = 'regions';
+
+      var container = document.getElementById('map_canvas');
+      var geomap = new google.visualization.GeoMap(container);
+      geomap.draw(data, options);
+  };
+  </script>
+</head>
+
+<body>
+  <div id='map_canvas'></div>
+</body>
+
+</html>
